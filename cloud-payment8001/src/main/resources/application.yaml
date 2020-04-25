@@ -10,6 +10,9 @@ spring:
     url: jdbc:mysql://localhost:3306/springcloud?useUnicode=true&characterEncoding-utr-8&useSSL=false
     username: root
     password: xxf@1234
+  redis:
+    host: 127.0.0.1
+    port: 6379
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
