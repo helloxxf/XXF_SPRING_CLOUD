@@ -7,11 +7,15 @@
     <groupId>com.xxf</groupId>
     <artifactId>springcloud</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
     <modules>
         <module>cloud-payment8001</module>
-        <module>common-utils</module>
+        <module>cloud-order80</module>
+        <module>eureka-server1001</module>
+        <module>common-util</module>
     </modules>
-    <packaging>pom</packaging>
+
 
 
     <!-- 统一版本管理-->
@@ -75,6 +79,7 @@
 
     </dependencyManagement>
 
+
     <build>
         <plugins>
             <plugin>
@@ -88,7 +93,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>3.5</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -96,5 +101,19 @@
             </plugin>
         </plugins>
     </build>
-
+    <!--远程仓库地址信息id号，描述性的name，url地址，作用：下载url中所需的依赖包-->
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>

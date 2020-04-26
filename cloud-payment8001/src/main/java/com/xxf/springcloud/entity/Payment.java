@@ -9,12 +9,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Payment {
     /**
-     * 主键id
+     * 订单编号
      */
     private Integer id;
 
     /**
-     * 金额
+     * 价格
      */
-    private String serial;
+    private Double price;
+
+    /**
+     * 商品名称
+     */
+    private String name;
 }

@@ -1,20 +1,15 @@
-package com.xxf.springcloud;
+package com.xxf.springcoud;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-/**
- * 启动类
- * @author xxf
- */
+@MapperScan("com.xxf.springcoud.mapper")
 @EnableDiscoveryClient
-@MapperScan("com.xxf.springcloud.mapper")
 @SpringBootApplication
-public class PaymentApplication {
-
+public class OrderApplication {
     public static void main(String[] args) {
-        SpringApplication.run(PaymentApplication.class, args);
+        SpringApplication.run(OrderApplication.class, args);
     }
 }

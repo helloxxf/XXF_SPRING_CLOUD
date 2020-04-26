@@ -5,11 +5,12 @@
     <!--@mbg.generated-->
     <!--@Table payment-->
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="serial" jdbcType="VARCHAR" property="serial" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, serial
+    id, price, `name`
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     <!--@mbg.generated-->
@@ -25,20 +26,26 @@
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.xxf.springcloud.entity.Payment" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into payment (serial)
-    values (#{serial,jdbcType=VARCHAR})
+    insert into payment (price, `name`)
+    values (#{price,jdbcType=DOUBLE}, #{name,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.xxf.springcloud.entity.Payment" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into payment
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="serial != null">
-        serial,
+      <if test="price != null">
+        price,
+      </if>
+      <if test="name != null">
+        `name`,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="serial != null">
-        #{serial,jdbcType=VARCHAR},
+      <if test="price != null">
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -46,8 +53,11 @@
     <!--@mbg.generated-->
     update payment
     <set>
-      <if test="serial != null">
-        serial = #{serial,jdbcType=VARCHAR},
+      <if test="price != null">
+        price = #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -55,7 +65,8 @@
   <update id="updateByPrimaryKey" parameterType="com.xxf.springcloud.entity.Payment">
     <!--@mbg.generated-->
     update payment
-    set serial = #{serial,jdbcType=VARCHAR}
+    set price = #{price,jdbcType=DOUBLE},
+      `name` = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -1,9 +1,9 @@
 server:
-  port: 8001
+  port: 80
 
 spring:
   application:
-    name: payment-server
+    name: order-server
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource      #当前数据源操作类型
     driver-class-name: com.mysql.jdbc.Driver        #mysql驱动包
@@ -34,3 +34,10 @@ eureka:
 cluser:
   eureka:
     ip1: 127.0.0.1
+
+#注册eureka的密码
+security:
+  eureka:
+     #配置eureka登录的账号
+    name: user
+    password: CF7hqp*Y

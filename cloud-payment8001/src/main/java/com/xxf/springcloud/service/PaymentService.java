@@ -1,5 +1,7 @@
 package com.xxf.springcloud.service;
 
+import com.xxf.common.entity.ResultBean;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -8,6 +10,7 @@ import com.xxf.springcloud.mapper.PaymentMapper;
 import com.xxf.springcloud.entity.Payment;
 
 @Service
+@Slf4j
 public class PaymentService {
 
     @Resource
@@ -19,8 +22,16 @@ public class PaymentService {
     }
 
 
-    public int insert(Payment record) {
-        return paymentMapper.insert(record);
+    /**
+     * 新增
+     *
+     * @param record
+     * @return
+     */
+    public ResultBean insert(Payment record) {
+        log.info("【PaymentService】insert param:{}", record);
+        paymentMapper.insert(record);
+        return new ResultBean<>();
     }
 
 
@@ -44,3 +55,4 @@ public class PaymentService {
     }
 
 }
+
