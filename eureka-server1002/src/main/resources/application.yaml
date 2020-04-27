@@ -1,9 +1,9 @@
 server:
-  port: 1001
+  port: 1002
 
 eureka:
   instance:
-    hostname: eureka-server1001
+    hostname: eureka-server1002
   client:
     #不向注册中心自己
     register-with-eureka: false
@@ -11,4 +11,4 @@ eureka:
     fetch-registry: false
     service-url:
       #设置与eureka server 交互的地址, 查询服务和注册服务都需要这个地址
-      defaultZone: http://eureka-server1002:1002/eureka/
+      defaultZone: http://eureka-server1001:1001/eureka/

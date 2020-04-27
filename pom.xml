@@ -12,8 +12,9 @@
     <modules>
         <module>cloud-payment8001</module>
         <module>cloud-order80</module>
-        <module>eureka-server1001</module>
         <module>common-util</module>
+        <module>eureka-server1001</module>
+        <module>eureka-server1002</module>
     </modules>
 
 
